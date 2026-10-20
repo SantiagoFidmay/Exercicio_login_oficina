@@ -1,0 +1,95 @@
+### 1. Testar cadastro de cpf errado
+POST http://localhost:3000/ciclista
+Content-Type: application/json
+
+{
+    "nome": "Roberto",
+    "email": "roberto@gmail.com",
+    "senha": "abc",
+    "cpf": "123456789",
+    "endereco": "rua abc, 5",
+    "celular": "47912345678"
+}
+
+### 2. Testar cadastro do ciclista
+POST http://localhost:3000/cliente
+Content-Type: application/json
+
+{
+    "nome": "ana",
+    "email": "ana@gmail.com",
+    "senha": "abc",
+    "cpf": "12345678912",
+    "endereco": "rua abc, 5",
+    "telefone": "47912345678"
+}
+
+### 3. Testar cadastro do ciclista
+POST http://localhost:3000/cliente
+Content-Type: application/json
+
+{
+    "nome": "Marcos",
+    "email": "marcos@gmail.com",
+    "senha": "abc",
+    "cpf": "12345678912",
+    "endereco": "rua abc, 5",
+    "celular": "47912345678"
+}
+
+### 4. Testar cadastro do ciclista
+POST http://localhost:3000/cliente
+Content-Type: application/json
+
+{
+    "nome": "Ana",
+    "email": "ana@gmail.com",
+    "senha": "abc",
+    "cpf": "12345678912",
+    "endereco": "rua abc, 5",
+    "telefone": "47912345678"
+}
+
+### Testar cadastro de bicicleta
+
+### 5. Fazer Login do ciclista (Armazena o token automaticamente)
+# @name loginReq
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "ana@gmail.com",
+    "senha": "abc"
+}
+
+### 6. Consultar ciclista por ID (rota privada)
+GET http://localhost:3000/cliente/1
+Authorization: {{loginReq.response.body.token}}
+
+### 7. Consultar ciclista por nome (rota privada)
+GET http://localhost:3000/cliente/buscarNome/Roberto
+Authorization: {{loginReq.response.body.token}}
+
+### 8. Listar ciclista (rota privada)
+GET http://localhost:3000/clientes
+Authorization: {{loginReq.response.body.token}}
+
+### 8. apagar ciclista (rota privada)
+DELETE http://localhost:3000/cliente/3
+Authorization: {{loginReq.response.body.token}}
+
+
+### 9. Testar cadastro do atualizar
+PUT http://localhost:3000/cliente/1
+Content-Type: application/json
+Authorization: {{loginReq.response.body.token}}
+
+{
+    "codCliente": "1",
+    "nome": "Santiago",
+    "email": "santiago@gmail.com",
+    "senha": "abc",
+    "cpf": "12345678912",
+    "endereco": "rua abc, 5",
+    "telefone": "47912345678"
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles_cad.css">
+    <script src="../js/cadastrar_agendamento.js"defer></script>
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Cadastrar Agendamento</h1>
+
+        <label for="data">Data</label>
+        <input type="date" id="data"><br><br>
+
+        <label for="hora">Hora</label>
+        <input type="time" id="hora"><br><br>
+
+        <label for="tipo">Tipo:</label><br>
+            <select id="tipo">
+                <option value="REVISAO">REVISAO</option>
+                <option value="MANUTENCAO">MANUTENCAO</option>
+                <option value="INSTALACAO">INSTALACAO</option>
+            </select><br><br>
+
+        <label for="idVeiculo">ID do Veiculo</label>
+        <input type="text" id="idVeiculo"><br><br>
+
+        <label for="idCliente">ID do Cliente</label>
+        <input type="text" id="idCliente"><br><br>
+
+     
+
+        <button id="btn_cadastrar_agendamento">Cadastrar</button>
+
+        <div id="resposta"></div>
+
+    </main>
+    
+
+   
+
+
+
+
+
+    
+
+</body>
+</html>
